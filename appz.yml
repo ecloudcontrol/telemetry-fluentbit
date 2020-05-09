@@ -1,0 +1,43 @@
+app:
+  name: Telemetry Fluentbit
+  code: TelemetryFluentbit
+  notify: appzdev@cloudbourne.co
+    
+build:
+  version: 0.2
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: telemetry_fluentbit-0.2
+  image_name: alpha/telemetry_fluentbit
+    
+deploy:
+  context: alpha/DEV
+  replicas: 1
+  port:
+  - 80
+    
+monitor:
+  notify: appzops@cloudbourne.co      
+    
+properties:
+  AWS_ACCESS_KEY_ID: 
+    vault: AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY:
+    vault: AWS_SECRET_ACCESS_KEY
+  AWS_DEFAULT_REGION: us-east-2
+  KUBECONFIG:
+    vault: KUBECONFIG
+  K8S_PROVIDER: UNMANAGED
+  NAMESPACE: staging-telemetry-fluentbit
+  APP_INSTANCE_NAME: telemetry-fluentbit-v1
+  STORAGE_CLASS_NAME: gp2
+  FLUENT_AGGREGATOR: 3.23.131.249
+  FLUENT_AGGREGATOR_PORT: 31212
+  FLUENTD_APP_NAME: fluent-bit-logging
+  COMMON_REGISTRY: quincy2019-registry-common.ecloudcontrol.com
+  EKS_REGION: us-east
+  EKS_ZONES: us-east-2b
+  LB_TYPE: internal 
+  LB_ENABLED: true
+  revision : 44
