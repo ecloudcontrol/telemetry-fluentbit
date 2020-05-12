@@ -36,4 +36,4 @@ properties:
   FLUENT_AGGREGATOR_PORT: 31212
   FLUENTD_APP_NAME: fluentbit-logging
   COMMON_REGISTRY: quincy2019-registry-common.ecloudcontrol.com
-  revision : 45
+  revision : 46
