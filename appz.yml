@@ -32,7 +32,7 @@ properties:
   NAMESPACE: staging-telemetry-fluentbit
   APP_INSTANCE_NAME: telemetry-fluentbit-v1
   STORAGE_CLASS_NAME: gp2
-  FLUENT_AGGREGATOR: fluentd-aggregator
+  FLUENT_AGGREGATOR: 3.23.131.249
   FLUENT_AGGREGATOR_PORT: 31212
   FLUENTD_APP_NAME: fluentbit-logging
   COMMON_REGISTRY: quincy2019-registry-common.ecloudcontrol.com
